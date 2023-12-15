@@ -13,11 +13,23 @@ export const usePathfinderStore = defineStore( 'pathfinderStore', {
         };
     },
     actions: {
-        incrementHPs() { if( this.currentHPs < this.maxHPs) this.currentHPs++; },
-        decrementHPs() { if( this.currentHPs > 0          ) this.currentHPs--; },
+        incrementHPs() {
+            if( this.currentHPs < this.maxHPs) {
+                this.currentHPs++;
+                localStorage.setItem('currentHPs', this.currentHPs);
+            }
+        },
+        decrementHPs() {
+            if( this.currentHPs > 0          ) {
+                this.currentHPs--;
+                localStorage.setItem('currentHPs', this.currentHPs);
+            }
+        },
         setCharacter(data) {
             this.character = data;
-            this.currentHPs = getMaxHPs(data);
+            const storedCurrentHPs = parseInt(localStorage.getItem('currentHPs'), 10);
+
+            this.currentHPs = ! isNaN(storedCurrentHPs) ? storedCurrentHPs : getMaxHPs(data);
             this.maxHPs = getMaxHPs(data);
         }
     },

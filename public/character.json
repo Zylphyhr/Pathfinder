@@ -456,6 +456,13 @@
       "type": "FullRound"
     }
   ],
-  "trackResources": [],
+  "trackedResources": [
+    {
+      "name": "Sample",
+      "perDay": 4,
+      "description": "This is just to test if the tracked resources actually works",
+      "usage": []
+    }
+  ],
   "notes" : "trackResources takes string/integer, name and how may tracker (checkboxes) you get per-day"
 }

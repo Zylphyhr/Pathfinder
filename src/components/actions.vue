@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { usePathfinderStore } from '@/stores/pathfinderStore';
 import { storeToRefs } from "pinia";
 import { filteredSwiftActions, filteredStandardActions, filteredMoveActions, fullRoundActions } from "@/utils";
@@ -17,6 +17,30 @@ function resetActions() {
   selectedMove.value = '';
   selectedStandard.value = '';
   selectedFullRound.value = '';
+}
+
+/* MY trickiest code... so adding comments for when I come back to it...
+   I added a usage array that is the length of "perDay", each with an initial value of false.
+   This is to track if that per-day use (checkbox) has been checked...  Means you can't break
+   the code by checking boxes at the end of the checkboxes first...
+
+   Also, storing that in local storage, I've learned that you have to stringify it in order to store it...
+   which, of course, means having to parse it back to an array when grabbing from the json storage.
+
+   Lastly, the showDescription is not set in the .json file, I add it here specifically to know if I
+   should be showing the description or not.
+*/
+onMounted(() => {
+  if (character.value.trackedResources) {
+    character.value.trackedResources.forEach( resource => {
+      const storedUsage = localStorage.getItem(`resource-usage-${resource.name}`);
+      resource.usage = storedUsage ? JSON.parse(storedUsage) : new Array(resource.perDay).fill(false);
+      resource.showDescription = false;
+    });
+  }
+});
+function updateUsage(resource) {
+  localStorage.setItem(`resource-usage-${resource.name}`, JSON.stringify(resource.usage));
 }
 </script>
 
@@ -56,6 +80,24 @@ function resetActions() {
           <button class="btn text-white" @click="resetActions">Reset Actions</button>
         </div>
       </div>
+
+      <div class="card mb-3" v-for="(resource, index) in character.trackedResources" :key="`resource-${index}`">
+        <div class="card-header" style="background-color: darkslategrey">
+          <input type="checkbox" v-model="resource.showDescription">
+          {{ resource.name }}
+        </div>
+        <div class="bg-dark-subtle card-body">
+          <div class="d-flex">
+            <div class="mx-2" v-for="n in resource.perDay" :key="`use-${index}-${n}`">
+              <input type="checkbox" :id="`use-${index}-${n}`" v-model="resource.usage[n-1]"
+                     @change="updateUsage(resource)">
+              <label :for="`use-${index}-${n}`">{{ n }}</label>
+            </div>
+          </div>
+          <p class="mt-2" v-if="resource.showDescription">{{ resource.description }}</p>
+        </div>
+      </div>
+
     </div>
 </template>
 
