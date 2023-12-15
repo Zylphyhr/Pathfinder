@@ -1,27 +1,30 @@
 <script setup>
   import { usePathfinderStore } from '@/stores/pathfinderStore';
-  import { storeToRefs } from "pinia";
+  import {computed} from "vue";
   import {getDC, concentration} from "@/utils";
 
   const store = usePathfinderStore();
-  const { spells } = storeToRefs( store );
+  const character  = computed( () => store.character  );
 </script>
 
 <template>
-  <div class="tab-pane fade" id="spells" role="tabpanel" aria-labelledby="spells-tab">
     <div class="container-fluid bg-dark text-white mt-3 col-lg-8 offset-lg-2 col-12">
       <div class="row">
-        <div class="col-md-4" v-for="spell in spells" :key="spell.name">
-          <div class="card m-2">
+        <div class="col-md-4" v-for="spell in character.spells" :key="spell.name">
+          <div class="card mb-2 darkened text-white">
             <div class="card-header">
               <div class="d-flex justify-content-between">
-                <div>{{ spell.name }}</div><div>Level {{ spell.level }}</div>
+                <div>{{ spell.name }}</div><div>Level: {{ spell.level }}</div>
               </div>
               <div class="d-flex justify-content-between" style="font-size: 0.8em;" >
-                <div >({{ spell.school }})</div><div>DC {{ getDC(spell) }}</div>
+                <div >({{ spell.school }})</div><div>DC: {{ getDC(character, spell) }}</div>
               </div>
-              <div class="card-body bg-dark text-white">
-									<span class="card-text" style="font-size: 0.9em;">
+              <div class="d-flex justify-content-between" style="font-size: 0.8em;" >
+                <div ></div><div>Concentration: {{ concentration(character) }}</div>
+              </div>
+            </div>
+            <div class="card-body bg-dark text-white p-2 m-2">
+									<span class="card-text" style="font-size: 0.8em;">
 										<div><strong>Casting Time:</strong> {{ spell.castingTime }}</div>
 										<div v-if="spell.area"><strong>Area:</strong> {{ spell.area }}</div>
 										<div><strong>Components:</strong> {{ spell.components }}</div>
@@ -32,11 +35,13 @@
 										<div v-if="spell.spellResistance !== 'No'"><strong>Spell Resistance:</strong> {{ spell.spellResistance }}</div>
 									</span>
               </div>
-              <hr class="card-text"/>{{ spell.description }}
-            </div>
+            <hr class="card-text"/><span class="mx-2 mb-2">{{ spell.description }}</span>
           </div>
         </div>
       </div>
     </div>
-  </div>
 </template>
+
+<style scoped>
+.darkened { background-color: darkslategrey; }
+</style>

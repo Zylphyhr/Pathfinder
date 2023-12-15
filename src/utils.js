@@ -81,10 +81,10 @@ export function skillBonuses(char) {
     });
 }
 export function concentration(char) {
-    return char.modifier(char.intelligence);
+    return modifier(char.intelligence) + char.level;
 }
 export function getDC(char, spell) {
-    return 10 + spell.level + char.modifier(char.intelligence);
+    return 10 + spell.level + modifier(char.intelligence);
 }
 export function filteredSwiftActions(char) {
     return char.actions.filter(action => action.type === 'Swift');
