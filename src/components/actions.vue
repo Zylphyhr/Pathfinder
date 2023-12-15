@@ -51,34 +51,40 @@ function resetAllResources() {
 function toggleDescription(resource) {
   resource.showDescription = !resource.showDescription;
 }
+function selectStandardAction(action) {
+  if (this.selectedFullRound === '') {
+    this.selectedStandard = action.name;
+  }
+}
 </script>
 
 <template>
     <div class="col-md-8 offset-md-2 col-lg-4 offset-lg-4 col-10 offset-1">
-      <div class="row my-2">
+
+      <div class="row my-2 border border-white rounded">
         <div class="col-4 actionLabel text-end rounded-start p-2">Standard Action:</div>
-        <select class="col-8 rounded-end" v-model="selectedStandard" :disabled="selectedFullRound !== ''">
+        <select class="col-8 rounded-end bg-dark-subtle" v-model="selectedStandard" :disabled="selectedFullRound !== ''">
           <option v-for="action in filteredStandardActions(character)" :value="action.name">{{ action.name }}</option>
         </select>
       </div>
 
-      <div class="row my-2">
+      <div class="row my-2 border border-white rounded">
         <div class="col-4 actionLabel text-end rounded-start p-2">Move Action:</div>
-        <select class="col-8 rounded-end" v-model="selectedMove" :disabled="selectedFullRound !== ''">
+        <select class="col-8 rounded-end bg-dark-subtle" v-model="selectedMove" :disabled="selectedFullRound !== ''">
           <option v-for="action in filteredMoveActions(character)" :value="action.name">{{ action.name }}</option>
         </select>
       </div>
 
-      <div class="row my-2">
+      <div class="row my-2 border border-white rounded">
         <div class="col-4 actionLabel text-end rounded-start p-2">Swift Action:</div>
-        <select class="col-8 rounded-end" v-model="selectedSwift" :disabled="selectedFullRound !== ''">
+        <select class="col-8 rounded-end bg-dark-subtle" v-model="selectedSwift" :disabled="selectedFullRound !== ''">
           <option v-for="action in filteredSwiftActions(character)" :value="action.name">{{ action.name }}</option>
         </select>
       </div>
 
-      <div class="row my-2">
+      <div class="row my-2 border border-white rounded">
         <div class="col-4 actionLabel text-end rounded-start p-2">Full Round Action:</div>
-        <select class="col-8 rounded-end" v-model="selectedFullRound"
+        <select class="col-8 rounded-end bg-dark-subtle" v-model="selectedFullRound"
                 :disabled="selectedSwift !== '' || selectedMove !== '' || selectedStandard !== ''">
           <option v-for="action in fullRoundActions(character)" :value="action.name">{{ action.name }}</option>
         </select>
@@ -121,6 +127,6 @@ function toggleDescription(resource) {
 
 <style scoped>
 .actionLabel { background-color: darkslategray; }
-select:disabled { background-color: grey}
+select:disabled { background-color: darkslategrey !important; }
 .btn { background-color: #101C34; }
 </style>

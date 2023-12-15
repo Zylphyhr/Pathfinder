@@ -25,7 +25,7 @@ const hpColor    = computed( () => {
     <div class="row pb-5">
       <div class="col-md-4">
         <div class="card">
-          <div class="card-header">
+          <div class="card-header bg-dark-subtle">
             Combat Stats
           </div>
           <div class="card-body text-white bg-dark">
@@ -59,7 +59,7 @@ const hpColor    = computed( () => {
       </div>
       <div class="col-md-4">
         <div class="card">
-          <div class="card-header">
+          <div class="card-header bg-dark-subtle">
             Armour Class
           </div>
           <div class="card-body text-white bg-dark">
@@ -80,7 +80,7 @@ const hpColor    = computed( () => {
       </div>
       <div class="col-md-4">
         <div class="card">
-          <div class="card-header">
+          <div class="card-header bg-dark-subtle">
             Saving Throws
           </div>
           <div class="card-body text-white bg-dark">
@@ -104,7 +104,7 @@ const hpColor    = computed( () => {
     <div class="row">
       <div class="col-md-4" v-for="weapon in character.weapons" :key="weapon.id">
         <div class="card">
-          <div class="card-header">
+          <div class="card-header bg-dark-subtle">
             {{ weapon.name }}
           </div>
           <div class="card-body text-white bg-dark">
@@ -146,6 +146,7 @@ const hpColor    = computed( () => {
 
 <style scoped>
 .slate { background-color: darkslategray; }
-.bordered { border: black 2px solid; }
+.bordered { border: grey 2px solid; }
 .dark { background-color: #101C34; }
+
 </style>

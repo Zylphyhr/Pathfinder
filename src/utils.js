@@ -1,3 +1,5 @@
+// Note to Add: if (character.trackedResources.some(resource => resource.name.includes("Rage") && resource.isActive)) {
+
 export function modifier(attribute) {
     return Math.floor((attribute - 10) / 2);
 }

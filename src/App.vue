@@ -19,20 +19,20 @@ onMounted(() => {
 <template>
   <header>
     <div class="wrapper">
-      <nav class="row">
+      <nav class="row mt-3">
         <div class="col-lg-8 offset-lg-2 col-12">
-          <ul class="nav nav-tabs"
+          <ul class="nav nav-tabs "
               id="characterSheetTabs" role="tablist">
-            <li class="nav-item rounded-top mx-1">
+            <li class="nav-item rounded-top mx-1 border border-white">
               <router-link class="nav-link text-white" to="/stats">Stats & Skills</router-link>
             </li>
-            <li class="nav-item rounded-top mx-1">
+            <li class="nav-item rounded-top mx-1 border border-white">
               <router-link class="nav-link text-white" to="/combat">Combat</router-link>
             </li>
-            <li class="nav-item rounded-top mx-1">
+            <li class="nav-item rounded-top mx-1 border border-white">
               <router-link class="nav-link text-white" to="/spells">Spells</router-link>
             </li>
-            <li class="nav-item rounded-top mx-1">
+            <li class="nav-item rounded-top mx-1 border border-white">
               <router-link class="nav-link text-white" to="/actions">Actions</router-link>
             </li>
           </ul>

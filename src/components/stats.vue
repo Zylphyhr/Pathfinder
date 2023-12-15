@@ -21,10 +21,10 @@ const imageError = ref(false);
       <!-- First Column - Character Info -->
       <div class="col-lg-4 col-md-6 col-12">
         <template v-if="!imageError">
-          <img :src="character.imageURL" class="img-fluid" alt="Character Portrait" @error="handleImageError">
+          <img :src="character.imageURL" class="img-fluid m-4" alt="Character Portrait" @error="handleImageError">
         </template>
         <template v-else>
-          <i class="bi bi-person-bounding-box" style="font-size: 16em;"></i>
+          <i class="bi bi-person-bounding-box m-4" style="font-size: 16em;"></i>
         </template>
         <h1 class="h2">{{ character.characterName }}</h1>
         <div>Race: {{ character.race }}</div>
@@ -108,6 +108,6 @@ const imageError = ref(false);
 
 <style scoped>
 .slate { background-color: darkslategray; }
-.bordered { border: black 2px solid; }
+.bordered { border: grey 2px solid; }
 .dark { background-color: #101C34; }
 </style>
