@@ -61,6 +61,7 @@ export function getDamageBase( weapon, char ) {
     let ret = weapon.baseDamage;
     if( hasProperty( char, "Elemental Assault" ) ) ret += " +1d6(Fire)";
     if( hasProperty( char, "Elemental Strike" ) ) ret += " +1d6(Fire)";
+    if( hasProperty( char, "Sneak Attack" ) ) ret += " +"+Math.floor( ( char.level +1 ) / 2 )+"d6(Precision)";
 
     return ret;
 }
