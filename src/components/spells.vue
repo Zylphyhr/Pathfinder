@@ -9,7 +9,7 @@
 
 <template>
   <div class="tab-pane fade" id="spells" role="tabpanel" aria-labelledby="spells-tab">
-    <div class="container-fluid bg-dark text-white p-5 col-lg-8 offset-lg-2 col-12">
+    <div class="container-fluid bg-dark text-white mt-3 col-lg-8 offset-lg-2 col-12">
       <div class="row">
         <div class="col-md-4" v-for="spell in spells" :key="spell.name">
           <div class="card m-2">

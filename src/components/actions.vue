@@ -51,15 +51,18 @@ function resetAllResources() {
 function toggleDescription(resource) {
   resource.showDescription = !resource.showDescription;
 }
-function selectStandardAction(action) {
-  if (this.selectedFullRound === '') {
-    this.selectedStandard = action.name;
+function toggleStuff( char, effect, activated ) {
+  switch( effect ) {
+    case "Bloodrage" : {
+      char.constitution += 4 * ( activated ? 1 : -1 );
+      char.strength += 4 * ( activated ? 1 : -1 );
+    }
   }
 }
 </script>
 
 <template>
-    <div class="col-md-8 offset-md-2 col-lg-4 offset-lg-4 col-10 offset-1">
+    <div class="col-md-8 offset-md-2 col-lg-4 offset-lg-4 col-10 offset-1 mt-3">
 
       <div class="row my-2 border border-white rounded">
         <div class="col-4 actionLabel text-end rounded-start p-2">Standard Action:</div>
@@ -100,7 +103,7 @@ function selectStandardAction(action) {
         <hr>
         <div class="card mb-3" v-for="(resource, index) in character.trackedResources" :key="`resource-${index}`">
           <div class="card-header text-white d-flex m-auto w-100" style="background-color: darkslategrey; cursor: pointer" @click="toggleDescription(resource)">
-            <input type="checkbox" v-if="resource.showCheckbox" v-model="resource.isActive">
+            <input type="checkbox" v-if="resource.showCheckbox" v-model="resource.isActive" @change="toggleStuff(character, resource.name, resource.isActive)">
             <div class="ps-2">{{ resource.name }}</div>
           </div>
           <div class="bg-dark-subtle card-body">

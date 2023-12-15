@@ -1,22 +1,31 @@
 // Note to Add: if (character.trackedResources.some(resource => resource.name.includes("Rage") && resource.isActive)) {
+export function hasProperty( char, name ) {
+    return char.trackedResources.some(resource => resource.name.includes( name ) && resource.isActive)
+}
+export function chargingPenalty( char ) {
+    return char.weapons.some( weapon => weapon.charging ) ? -2 : 0;
+}
+export function acPenalty( char ) {
+    let penalty = 0;
+    penalty += hasProperty( char, "Bloodrage" ) ? 2 : 0;
+    penalty += chargingPenalty( char );
 
+    return penalty;
+}
 export function modifier(attribute) {
     return Math.floor((attribute - 10) / 2);
 }
 export function calculateCrit( weapon ) {
     return weapon.criticalChance === 20 ? "20" : weapon.criticalChance + "-20";
 }
-function chargingPenalty( weapons ) {
-    return weapons.some( weapon => weapon.charging ) ? -2 : 0;
-}
 export function standardAC(char) {
-    return 10 + char.armour.ac + modifier(char.dexterity) - chargingPenalty( char.weapons );
+    return 10 + char.armour.ac + modifier(char.dexterity) - acPenalty(char);
 }
 export function touchAC(char) {
-    return 10 + modifier(char.dexterity) - chargingPenalty( char.weapons );
+    return 10 + modifier(char.dexterity) - acPenalty(char);
 }
 export function flatFootedAC(char) {
-    return 10 + char.armour.ac + (char.uncannyDodge ? modifier(char.dexterity) : 0) - chargingPenalty( char.weapons );
+    return 10 + char.armour.ac + (char.uncannyDodge ? modifier(char.dexterity) : 0) - acPenalty(char);
 }
 export function initiative(char) {
     return modifier(char.dexterity) + char.initiativeBonus;
@@ -28,14 +37,32 @@ export function calculatePoorSave(level) {
     return Math.floor((level - 1) / 3);
 }
 export function fortitudeSave(char) {
+    let bonus = modifier(char.constitution);
+    bonus += hasProperty( char, "Archaeologist’s Luck" ) ? 1 : 0;
+    bonus += char.characterClass === "Paladin" && char.level > 1 ? char.charisma : 0;
+
     return (char.fortGood ? calculateGoodSave(char.level) :
-        calculatePoorSave(char.level)) + modifier(char.constitution);
+        calculatePoorSave(char.level)) + bonus;
 }
 export function reflexSave(char) {
-    return (char.refGood ? calculateGoodSave(char.level) : calculatePoorSave(char.level)) + modifier(char.dexterity);
+    let bonus = modifier(char.dexterity);
+    bonus += hasProperty( char, "Archaeologist’s Luck" ) ? 1 : 0;
+    bonus += char.characterClass === "Paladin" && char.level > 1 ? char.charisma : 0;
+    return (char.refGood ? calculateGoodSave(char.level) : calculatePoorSave(char.level)) + bonus;
 }
 export function willSave(char) {
-    return (char.willGood ? calculateGoodSave(char.level) : calculatePoorSave(char.level)) + modifier(char.wisdom);
+    let bonus = modifier(char.wisdom);
+    bonus += hasProperty( char, "Archaeologist’s Luck" ) ? 1 : 0;
+    bonus += char.characterClass === "Paladin" && char.level > 1 ? char.charisma : 0;
+    bonus += hasProperty( char, "Bloodrage" ) ? 2 : 0;
+    return (char.willGood ? calculateGoodSave(char.level) : calculatePoorSave(char.level)) + bonus;
+}
+export function getDamageBase( weapon, char ) {
+    let ret = weapon.baseDamage;
+    if( hasProperty( char, "Elemental Assault" ) ) ret += " +1d6(Fire)";
+    if( hasProperty( char, "Elemental Strike" ) ) ret += " +1d6(Fire)";
+
+    return ret;
 }
 export function skillBonuses(char) {
     return char.skills.map(skill => {
@@ -43,6 +70,7 @@ export function skillBonuses(char) {
         if (skill.classSkill && skill.value > 0) {
             bonus += 3; // Add class skill bonus if applicable
         }
+        if( hasProperty( char, "Archaeologist’s Luck" ) ) bonus += 1;
         return {
             name: skill.name,
             bonus: bonus >= 0 ? "+" + bonus : bonus,
@@ -107,6 +135,8 @@ export function calculateHitChance( weapon ) {
     if (weapon.charging) hitChance += 2;
     if (weapon.flanking) hitChance += 2;
     if (weapon.energy) hitChance += 1;
+    if( hasProperty( char, "Archaeologist’s Luck" ) ) hitChance += 1;
+    if( hasProperty( char, "Smite Evil" ) ) hitChance += char.charisma;
     return hitChance;
 }
 export function calculateDamageBonus( weapon ) {
@@ -116,6 +146,8 @@ export function calculateDamageBonus( weapon ) {
         damage += 2 * (Math.floor(calculatedBAB(char) / 4) + 1);
     }
     if (weapon.twoHanded) damage = Math.floor(damage * 1.5);
+    if( hasProperty( char, "Archaeologist’s Luck" ) ) damage += 1;
+    if( hasProperty( char, "Smite Evil" ) ) damage += char.level;
     return damage > 0 ? "+" + damage : damage < 0 ? damage : "";
 }
 export function cmb(char) {

@@ -1,7 +1,7 @@
 <script setup>
 import { usePathfinderStore } from "@/stores/pathfinderStore";
 import {computed} from "vue";
-import { initiative, cmb, cmd,
+import { initiative, cmb, cmd, getDamageBase,
   calculateHitChance, calculateDamageBonus, calculateCrit,
   standardAC, touchAC, flatFootedAC,
   fortitudeSave, reflexSave, willSave } from "@/utils";
@@ -21,7 +21,7 @@ const hpColor    = computed( () => {
 </script>
 
 <template>
-  <div class="container-fluid bg-dark text-white p-5 col-lg-8 offset-lg-2 col-12">
+  <div class="container-fluid bg-dark text-white mt-3 col-lg-8 offset-lg-2 col-12">
     <div class="row pb-5">
       <div class="col-md-4">
         <div class="card">
@@ -118,7 +118,7 @@ const hpColor    = computed( () => {
             </div>
             <div class="row m-1">
               <div class="col-8 text-end rounded-start bordered slate">Damage:</div>
-              <div class="col-4 text-center rounded-end bordered dark">{{ weapon.baseDamage }}{{ calculateDamageBonus(weapon) }}</div>
+              <div class="col-4 text-center rounded-end bordered dark">{{ getDamageBase(weapon, character) }}{{ calculateDamageBonus(weapon) }}</div>
             </div><hr>
             <div class="form-check">
               <input type="checkbox" class="form-check-input" id="powerAttack-{{weapon.id}}" v-model="weapon.powerAttack">
