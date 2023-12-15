@@ -1,0 +1,461 @@
+{
+  "characterName": "",
+  "level": 2,
+  "strength": 10,
+  "constitution": 10,
+  "dexterity": 10,
+  "intelligence": 10,
+  "wisdom": 10,
+  "charisma": 10,
+  "fortGood": true,
+  "refGood": false,
+  "willGood": true,
+  "bab": 2,
+  "hitDice": "d6",
+  "uncannyDodge": 0,
+  "initiativeBonus": 0,
+  "size": 0,
+  "speed": "30ft",
+  "name": "Mob",
+  "race": "Human",
+  "characterClass": "Fighter",
+  "imageURL": "/character.png",
+  "skills": [
+    {
+      "name": "Acrobatics",
+      "value": 0,
+      "bonus": 0,
+      "stat": "dexterity",
+      "classSkill": false,
+      "usable": true
+    },
+    {
+      "name": "Appraise",
+      "value": 0,
+      "bonus": 0,
+      "stat": "intelligence",
+      "classSkill": false,
+      "usable": true
+    },
+    {
+      "name": "Bluff",
+      "value": 0,
+      "bonus": 0,
+      "stat": "charisma",
+      "classSkill": false,
+      "usable": true
+    },
+    {
+      "name": "Climb",
+      "value": 0,
+      "bonus": 0,
+      "stat": "strength",
+      "classSkill": false,
+      "usable": true
+    },
+    {
+      "name": "Diplomacy",
+      "value": 0,
+      "bonus": 0,
+      "stat": "charisma",
+      "classSkill": false,
+      "usable": true
+    },
+    {
+      "name": "Disable Device",
+      "value": 0,
+      "bonus": 0,
+      "stat": "dexterity",
+      "classSkill": false,
+      "usable": false
+    },
+    {
+      "name": "Disguise",
+      "value": 0,
+      "bonus": 0,
+      "stat": "charisma",
+      "classSkill": false,
+      "usable": true
+    },
+    {
+      "name": "Escape Artist",
+      "value": 0,
+      "bonus": 0,
+      "stat": "dexterity",
+      "classSkill": false,
+      "usable": true
+    },
+    {
+      "name": "Fly",
+      "value": 0,
+      "bonus": 0,
+      "stat": "dexterity",
+      "classSkill": false,
+      "usable": true
+    },
+    {
+      "name": "Handle Animal",
+      "value": 0,
+      "bonus": 0,
+      "stat": "charisma",
+      "classSkill": false,
+      "usable": false
+    },
+    {
+      "name": "Heal",
+      "value": 0,
+      "bonus": 0,
+      "stat": "wisdom",
+      "classSkill": false,
+      "usable": true
+    },
+    {
+      "name": "Intimidate",
+      "value": 0,
+      "bonus": 0,
+      "stat": "charisma",
+      "classSkill": false,
+      "usable": true
+    },
+    {
+      "name": "Knowledge (Arcana)",
+      "value": 0,
+      "bonus": 0,
+      "stat": "intelligence",
+      "classSkill": false,
+      "usable": false
+    },
+    {
+      "name": "Knowledge (Dungeoneering)",
+      "value": 0,
+      "bonus": 0,
+      "stat": "intelligence",
+      "classSkill": false,
+      "usable": false
+    },
+    {
+      "name": "Knowledge (Engineering)",
+      "value": 0,
+      "bonus": 0,
+      "stat": "intelligence",
+      "classSkill": false,
+      "usable": false
+    },
+    {
+      "name": "Knowledge (Geography)",
+      "value": 0,
+      "bonus": 0,
+      "stat": "intelligence",
+      "classSkill": false,
+      "usable": false
+    },
+    {
+      "name": "Knowledge (History)",
+      "value": 0,
+      "bonus": 0,
+      "stat": "intelligence",
+      "classSkill": false,
+      "usable": false
+    },
+    {
+      "name": "Knowledge (Local)",
+      "value": 0,
+      "bonus": 0,
+      "stat": "intelligence",
+      "classSkill": false,
+      "usable": false
+    },
+    {
+      "name": "Knowledge (Nature)",
+      "value": 0,
+      "bonus": 0,
+      "stat": "intelligence",
+      "classSkill": false,
+      "usable": false
+    },
+    {
+      "name": "Knowledge (Nobility)",
+      "value": 0,
+      "bonus": 0,
+      "stat": "intelligence",
+      "classSkill": false,
+      "usable": false
+    },
+    {
+      "name": "Knowledge (Planes)",
+      "value": 0,
+      "bonus": 0,
+      "stat": "intelligence",
+      "classSkill": false,
+      "usable": false
+    },
+    {
+      "name": "Knowledge (Religion)",
+      "value": 0,
+      "bonus": 0,
+      "stat": "intelligence",
+      "classSkill": false,
+      "usable": false
+    },
+    {
+      "name": "Linguistics",
+      "value": 0,
+      "bonus": 0,
+      "stat": "intelligence",
+      "classSkill": false,
+      "usable": false
+    },
+    {
+      "name": "Perception",
+      "value": 0,
+      "bonus": 0,
+      "stat": "wisdom",
+      "classSkill": false,
+      "usable": true
+    },
+    {
+      "name": "Ride",
+      "value": 0,
+      "bonus": 0,
+      "stat": "dexterity",
+      "classSkill": false,
+      "usable": true
+    },
+    {
+      "name": "Sense Motive",
+      "value": 0,
+      "bonus": 0,
+      "stat": "wisdom",
+      "classSkill": false,
+      "usable": true
+    },
+    {
+      "name": "Sleight of Hand",
+      "value": 0,
+      "bonus": 0,
+      "stat": "dexterity",
+      "classSkill": false,
+      "usable": false
+    },
+    {
+      "name": "Spellcraft",
+      "value": 0,
+      "bonus": 0,
+      "stat": "intelligence",
+      "classSkill": false,
+      "usable": false
+    },
+    {
+      "name": "Stealth",
+      "value": 0,
+      "bonus": 0,
+      "stat": "dexterity",
+      "classSkill": false,
+      "usable": true
+    },
+    {
+      "name": "Survival",
+      "value": 0,
+      "bonus": 0,
+      "stat": "wisdom",
+      "classSkill": false,
+      "usable": true
+    },
+    {
+      "name": "Swim",
+      "value": 0,
+      "bonus": 0,
+      "stat": "strength",
+      "classSkill": false,
+      "usable": true
+    },
+    {
+      "name": "Use Magic Device",
+      "value": 0,
+      "bonus": 0,
+      "stat": "charisma",
+      "classSkill": false,
+      "usable": false
+    }
+  ],
+  "weapons": [
+    {
+      "id": "1",
+      "name": "Sword",
+      "baseDamage": "1d6",
+      "criticalChance": 20,
+      "twoHanded": false,
+      "weaponFocus": false,
+      "masterwork": false,
+      "powerAttack": false,
+      "flanking": false,
+      "charging": false,
+      "energy": false
+    },
+    {
+      "id": "2",
+      "name": "Sword",
+      "baseDamage": "1d6",
+      "criticalChance": 20,
+      "twoHanded": false,
+      "weaponFocus": false,
+      "masterwork": false,
+      "powerAttack": false,
+      "flanking": false,
+      "charging": false,
+      "energy": false
+    },
+    {
+      "id": "3",
+      "name": "Sword",
+      "baseDamage": "1d6",
+      "criticalChance": 20,
+      "twoHanded": false,
+      "weaponFocus": false,
+      "masterwork": false,
+      "powerAttack": false,
+      "flanking": false,
+      "charging": false,
+      "energy": false
+    }
+  ],
+  "armour": {
+    "ac": 0
+  },
+  "actions": [
+    {
+      "name": "Attack",
+      "type": "Standard"
+    },
+    {
+      "name": "Cast Spell",
+      "type": "Standard"
+    },
+    {
+      "name": "Activate Magic Item",
+      "type": "Standard"
+    },
+    {
+      "name": "Channel Energy",
+      "type": "Standard"
+    },
+    {
+      "name": "Maintain Spell",
+      "type": "Standard"
+    },
+    {
+      "name": "Dismiss Spell",
+      "type": "Standard"
+    },
+    {
+      "name": "Drink Potion/Use Oil",
+      "type": "Standard"
+    },
+    {
+      "name": "Escape (vs Grapple)",
+      "type": "Standard"
+    },
+    {
+      "name": "Feint",
+      "type": "Standard"
+    },
+    {
+      "name": "Read Scroll",
+      "type": "Standard"
+    },
+    {
+      "name": "Total Defense",
+      "type": "Standard"
+    },
+    {
+      "name": "Use Ability (Default)",
+      "type": "Standard"
+    },
+    {
+      "name": "Move (Speed x2)",
+      "type": "Standard"
+    },
+    {
+      "name": "- Hold Action -",
+      "type": "Standard"
+    },
+    {
+      "name": "Move (Speed)",
+      "type": "Move"
+    },
+    {
+      "name": "Control Mount",
+      "type": "Move"
+    },
+    {
+      "name": "Direct/Redirect Spell",
+      "type": "Move"
+    },
+    {
+      "name": "Draw Weapon from Sheath/Bag",
+      "type": "Move"
+    },
+    {
+      "name": "Load Crossbow",
+      "type": "Move"
+    },
+    {
+      "name": "Open Door",
+      "type": "Move"
+    },
+    {
+      "name": "Mount/Dismount Steed",
+      "type": "Move"
+    },
+    {
+      "name": "Sheathe Weapon",
+      "type": "Move"
+    },
+    {
+      "name": "Stand Up",
+      "type": "Move"
+    },
+    {
+      "name": "Ready/Drop Shield",
+      "type": "Move"
+    },
+    {
+      "name": "Get item from Bag/Container",
+      "type": "Move"
+    },
+    {
+      "name": "-You have no Swift Actions-",
+      "type": "Swift"
+    },
+    {
+      "name": "Full Attack",
+      "type": "FullRound"
+    },
+    {
+      "name": "Charge",
+      "type": "FullRound"
+    },
+    {
+      "name": "Extinguish/Light a Fire/Torch",
+      "type": "FullRound"
+    },
+    {
+      "name": "Load Heavy Crossbow",
+      "type": "FullRound"
+    },
+    {
+      "name": "Throw Splash Weapon",
+      "type": "FullRound"
+    },
+    {
+      "name": "Run (Speed x4)",
+      "type": "FullRound"
+    },
+    {
+      "name": "Withdraw",
+      "type": "FullRound"
+    }
+  ],
+  "trackResources": [],
+  "notes" : "trackResources takes string/integer, name and how may tracker (checkboxes) you get per-day"
+}
