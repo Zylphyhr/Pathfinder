@@ -48,7 +48,9 @@ function resetAllResources() {
     localStorage.setItem(`resource-usage-${resource.name}`, JSON.stringify(resource.usage));
   });
 }
-
+function toggleDescription(resource) {
+  resource.showDescription = !resource.showDescription;
+}
 </script>
 
 <template>
@@ -84,28 +86,34 @@ function resetAllResources() {
 
       <div class="row my-2">
         <div class="d-flex justify-content-center mt-3">
-          <button class="btn text-white" @click="resetActions">Reset Actions</button>
+          <button class="btn text-white border border-white" @click="resetActions">Reset Actions</button>
         </div>
       </div>
 
-      <div class="card mb-3" v-for="(resource, index) in character.trackedResources" :key="`resource-${index}`">
-        <div class="card-header" style="background-color: darkslategrey">
-          <input type="checkbox" v-model="resource.showDescription">
-          {{ resource.name }}
-        </div>
-        <div class="bg-dark-subtle card-body">
-          <div class="d-flex">
-            <div class="mx-2" v-for="n in resource.perDay" :key="`use-${index}-${n}`">
-              <input type="checkbox" :id="`use-${index}-${n}`" v-model="resource.usage[n-1]"
-                     @change="updateUsage(resource)">
-              <label :for="`use-${index}-${n}`">{{ n }}</label>
-            </div>
+      <div v-if="character.trackedResources.length > 0">
+        <hr>
+        <div class="card mb-3" v-for="(resource, index) in character.trackedResources" :key="`resource-${index}`">
+          <div class="card-header text-white d-flex m-auto w-100" style="background-color: darkslategrey; cursor: pointer" @click="toggleDescription(resource)">
+            <input type="checkbox" v-if="resource.showCheckbox" v-model="resource.isActive">
+            <div class="ps-2">{{ resource.name }}</div>
           </div>
-          <p class="mt-2" v-if="resource.showDescription">{{ resource.description }}</p>
+          <div class="bg-dark-subtle card-body">
+            <div class="d-flex">
+              <div class="mx-2" v-for="n in resource.perDay" :key="`use-${index}-${n}`">
+                <input type="checkbox" :id="`use-${index}-${n}`" v-model="resource.usage[n-1]" @change="updateUsage(resource)">
+                <label :for="`use-${index}-${n}`">{{ n }}</label>
+              </div>
+            </div>
+            <p class="mt-2" v-if="resource.showDescription">{{ resource.description }}</p>
+          </div>
         </div>
       </div>
 
-      <button class="btn" @click="resetAllResources">Reset All Resources</button>
+      <div class="row my-2">
+        <div class="d-flex justify-content-center mt-3">
+          <button class="btn text-white border border-white" @click="resetAllResources">Reset All Resources</button>
+        </div>
+      </div>
 
 
     </div>
