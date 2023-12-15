@@ -11,7 +11,7 @@
   "refGood": false,
   "willGood": true,
   "bab": 2,
-  "hitDice": "d6",
+  "hitDice": "d8",
   "uncannyDodge": 0,
   "initiativeBonus": 0,
   "size": 0,
@@ -460,6 +460,14 @@
     {
       "name": "Archaeologist’s Luck",
       "perDay": 4,
+      "description": "This is just to test if the tracked resources actually works",
+      "usage": [],
+      "isActive": false,
+      "showCheckbox": true
+    },
+    {
+      "name": "Sneak Attack",
+      "perDay": 0,
       "description": "This is just to test if the tracked resources actually works",
       "usage": [],
       "isActive": false,

@@ -111,15 +111,10 @@ export function fullRoundActions(char) {
     return char.actions.filter(action => action.type === 'FullRound');
 }
 export function getMaxHPs(char) {
-    const conBonus = modifier(char.constitution) * char.level;
-    let hitDiceValue = 6;
-
-    if (/^\d+d\d+$/.test(char.hitDice)) {
-        const [numDice, numSides] = char.hitDice.split('d').map(Number);
-        hitDiceValue = (Math.floor(numDice / 2) + numDice) * numSides;
-    }
-
-    return hitDiceValue + conBonus + char.level;
+    let ret = Number(char.hitDice.match(/^d(\d+)$/)[1]);  // Start with max HPs at 1st level
+    ret += (char.level - 1) * ( Math.floor( ret/2 ) +1 ); // Each additional level, 1/2HPs +1.
+    ret += modifier(char.constitution) + char.level;      // Con bonus and Favored Class
+    return ret;
 }
 export function calculatedBAB( char ) {
     return Math.floor( char.level * (char.bab+1) * 0.25 );

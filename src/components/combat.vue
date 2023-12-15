@@ -108,18 +108,19 @@ const hpColor    = computed( () => {
             {{ weapon.name }}
           </div>
           <div class="card-body text-white bg-dark">
-            <div class="row m-1">
-              <div class="col-8 text-end rounded-start bordered slate">Chance to Hit:</div>
-              <div class="col-4 text-center rounded-end bordered dark">{{ calculateHitChance(weapon) }}</div>
+            <div class="d-flex justify-content-between m-1">
+              <div class="flex-grow-1 px-2 text-end rounded-start bordered slate">Chance to Hit:</div>
+              <div class="flex-shrink-1 px-2 min-width-33 text-center rounded-end bordered dark">{{ calculateHitChance(weapon) }}</div>
             </div>
-            <div class="row m-1">
-              <div class="col-8 text-end rounded-start bordered slate">Critical Chance:</div>
-              <div class="col-4 text-center rounded-end bordered dark">{{ calculateCrit(weapon) }}</div>
+            <div class="d-flex justify-content-between m-1">
+              <div class="flex-grow-1 px-2 text-end rounded-start bordered slate">Critical Chance:</div>
+              <div class="flex-shrink-1 px-2 min-width-33 text-center rounded-end bordered dark">{{ calculateCrit(weapon) }}</div>
             </div>
-            <div class="row m-1">
-              <div class="col-8 text-end rounded-start bordered slate">Damage:</div>
-              <div class="col-4 text-center rounded-end bordered dark">{{ getDamageBase(weapon, character) }}{{ calculateDamageBonus(weapon) }}</div>
-            </div><hr>
+            <div class="d-flex justify-content-between m-1">
+              <div class="flex-grow-1 px-2 text-end rounded-start bordered slate">Damage:</div>
+              <div class="flex-shrink-1 px-2 min-width-33 text-center rounded-end bordered dark">{{ getDamageBase(weapon, character) }}{{ calculateDamageBonus(weapon) }}</div>
+            </div>
+            <hr>
             <div class="form-check">
               <input type="checkbox" class="form-check-input" id="powerAttack-{{weapon.id}}" v-model="weapon.powerAttack">
               <label class="form-check-label" for="powerAttack-{{weapon.id}}">Power Attack</label>
@@ -148,5 +149,5 @@ const hpColor    = computed( () => {
 .slate { background-color: darkslategray; }
 .bordered { border: grey 2px solid; }
 .dark { background-color: #101C34; }
-
+.min-width-33 { min-width: 33%; }
 </style>
