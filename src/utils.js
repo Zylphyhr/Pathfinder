@@ -4,14 +4,17 @@ export function modifier(attribute) {
 export function calculateCrit( weapon ) {
     return weapon.criticalChance === 20 ? "20" : weapon.criticalChance + "-20";
 }
+function chargingPenalty( weapons ) {
+    return weapons.some( weapon => weapon.charging ) ? -2 : 0;
+}
 export function standardAC(char) {
-    return 10 + char.armour.ac + modifier(char.dexterity);
+    return 10 + char.armour.ac + modifier(char.dexterity) - chargingPenalty( char.weapons );
 }
 export function touchAC(char) {
-    return 10 + modifier(char.dexterity);
+    return 10 + modifier(char.dexterity) - chargingPenalty( char.weapons );
 }
 export function flatFootedAC(char) {
-    return 10 + char.armour.ac + (char.uncannyDodge ? modifier(char.dexterity) : 0);
+    return 10 + char.armour.ac + (char.uncannyDodge ? modifier(char.dexterity) : 0) - chargingPenalty( char.weapons );
 }
 export function initiative(char) {
     return modifier(char.dexterity) + char.initiativeBonus;
