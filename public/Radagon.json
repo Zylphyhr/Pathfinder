@@ -1,28 +1,29 @@
 {
-  "characterName": "Corvo",
+  "characterName": "Radagon",
   "level": 2,
-  "strength": 13,
+  "strength": 18,
   "constitution": 14,
-  "dexterity": 18,
-  "intelligence": 14,
+  "dexterity": 10,
+  "intelligence": 10,
   "wisdom": 10,
-  "charisma": 12,
-  "fortGood": false,
-  "refGood": true,
-  "willGood": false,
-  "bab": 2,
-  "hitDice": "d8",
+  "charisma": 16,
+  "fortGood": true,
+  "refGood": false,
+  "willGood": true,
+  "bab": 3,
+  "currentHPs": 0,
+  "hitDice": "d10",
   "uncannyDodge": 0,
   "initiativeBonus": 0,
   "size": 0,
   "speed": "30ft",
-  "race": "Half-Elf",
-  "characterClass": "Rogue (Scout)",
+  "race": "Human",
+  "characterClass": "Paladin (Samurai)",
   "imageURL": "/character.png",
   "skills": [
     {
       "name": "Acrobatics",
-      "value": 2,
+      "value": 0,
       "bonus": 0,
       "stat": "dexterity",
       "classSkill": false,
@@ -46,7 +47,7 @@
     },
     {
       "name": "Climb",
-      "value": 2,
+      "value": 0,
       "bonus": 0,
       "stat": "strength",
       "classSkill": false,
@@ -55,15 +56,15 @@
     {
       "name": "Diplomacy",
       "value": 0,
-      "bonus": 0,
+      "bonus": 1,
       "stat": "charisma",
-      "classSkill": false,
+      "classSkill": true,
       "usable": true
     },
     {
       "name": "Disable Device",
-      "value": 2,
-      "bonus": 2,
+      "value": 0,
+      "bonus": 0,
       "stat": "dexterity",
       "classSkill": false,
       "usable": false
@@ -78,7 +79,7 @@
     },
     {
       "name": "Escape Artist",
-      "value": 2,
+      "value": 0,
       "bonus": 0,
       "stat": "dexterity",
       "classSkill": false,
@@ -95,9 +96,9 @@
     {
       "name": "Handle Animal",
       "value": 0,
-      "bonus": 0,
+      "bonus": 1,
       "stat": "charisma",
-      "classSkill": false,
+      "classSkill": true,
       "usable": false
     },
     {
@@ -105,7 +106,7 @@
       "value": 0,
       "bonus": 0,
       "stat": "wisdom",
-      "classSkill": false,
+      "classSkill": true,
       "usable": true
     },
     {
@@ -177,7 +178,7 @@
       "value": 0,
       "bonus": 0,
       "stat": "intelligence",
-      "classSkill": false,
+      "classSkill": true,
       "usable": false
     },
     {
@@ -191,9 +192,9 @@
     {
       "name": "Knowledge (Religion)",
       "value": 0,
-      "bonus": 0,
+      "bonus": 1,
       "stat": "intelligence",
-      "classSkill": false,
+      "classSkill": true,
       "usable": false
     },
     {
@@ -206,8 +207,8 @@
     },
     {
       "name": "Perception",
-      "value": 2,
-      "bonus": 5,
+      "value": 0,
+      "bonus": 0,
       "stat": "wisdom",
       "classSkill": false,
       "usable": true
@@ -215,22 +216,22 @@
     {
       "name": "Ride",
       "value": 0,
-      "bonus": 0,
+      "bonus": 1,
       "stat": "dexterity",
-      "classSkill": false,
+      "classSkill": true,
       "usable": true
     },
     {
       "name": "Sense Motive",
-      "value": 2,
-      "bonus": 0,
+      "value": 0,
+      "bonus": 1,
       "stat": "wisdom",
-      "classSkill": false,
+      "classSkill": true,
       "usable": true
     },
     {
       "name": "Sleight of Hand",
-      "value": 2,
+      "value": 0,
       "bonus": 0,
       "stat": "dexterity",
       "classSkill": false,
@@ -241,12 +242,12 @@
       "value": 0,
       "bonus": 0,
       "stat": "intelligence",
-      "classSkill": false,
+      "classSkill": true,
       "usable": false
     },
     {
       "name": "Stealth",
-      "value": 2,
+      "value": 0,
       "bonus": 0,
       "stat": "dexterity",
       "classSkill": false,
@@ -262,7 +263,7 @@
     },
     {
       "name": "Swim",
-      "value": 2,
+      "value": 0,
       "bonus": 0,
       "stat": "strength",
       "classSkill": false,
@@ -270,8 +271,8 @@
     },
     {
       "name": "Use Magic Device",
-      "value": 2,
-      "bonus": 0,
+      "value": 0,
+      "bonus": 1,
       "stat": "charisma",
       "classSkill": false,
       "usable": false
@@ -293,10 +294,10 @@
     },
     {
       "id": "2",
-      "name": "Kukri",
-      "baseDamage": "1d4",
+      "name": "Katana",
+      "baseDamage": "1d8",
       "criticalChance": 18,
-      "twoHanded": false,
+      "twoHanded": true,
       "weaponFocus": false,
       "masterwork": true,
       "powerAttack": false,
@@ -326,7 +327,15 @@
       "type": "Standard"
     },
     {
+      "name": "Lay on Hands (Others)",
+      "type": "Standard"
+    },
+    {
       "name": "Maintain Spell",
+      "type": "Standard"
+    },
+    {
+      "name": "Create Life Link with Another",
       "type": "Standard"
     },
     {
@@ -410,7 +419,11 @@
       "type": "Move"
     },
     {
-      "name": "-You have no Swift Actions-",
+      "name": "Target for Smite Evil",
+      "type": "Swift"
+    },
+    {
+      "name": "Lay on Hands (Self)",
       "type": "Swift"
     },
     {
@@ -445,12 +458,36 @@
   "spells": [],
   "trackedResources": [
     {
-      "name": "Sneak Attack",
-      "perDay": 0,
+      "name": "Smite Evil",
+      "perDay": 1,
       "showCheckbox": true,
       "isActive": false,
       "usage": [],
-      "description": "Deal extra damage anytime your target is denied a Dexterity bonus to AC (such as if they do not see the attack coming), or when your target is flanked by you."
+      "description": "As a Swift Action, gain a huge boost against a single creature until it is dead.  Use 1x per day, +1 for every 3 levels past 1st. (4th, 7th, etc)"
+    },
+    {
+      "name": "Channel Energy",
+      "perDay": 6,
+      "showCheckbox": false,
+      "isActive": false,
+      "usage": [],
+      "description": "As a Swift Action, allies within 30' of you gain Fast Healing 1, in addition to gaining +1 Moral bonus to Armour Saves, Attack Rolls, Damage Rolls, and Saving Throws against fear.  This ability can be used 3 rounds per day, plus a number of rounds equal to your Charisma Modifier."
+    },
+    {
+      "name": "Laying on of Hands",
+      "perDay": 4,
+      "showCheckbox": false,
+      "isActive": false,
+      "usage": [],
+      "description": "As a Swift Action, heal 1d6+2 damage for every 2 levels you have to self.  Can heal others, but requires a Swift Action and only heals 1d6 for every 2 levels you have.  May use a number of times a day equal to 1/2 level plus Charisma modifier."
+    },
+    {
+      "name": "Create Life Link",
+      "perDay": 0,
+      "showCheckbox": false,
+      "isActive": false,
+      "usage": [],
+      "description": "As a Standard Action, create a bond that lasts until your target dies, or exceeds 120'(40m) distance from you.  Each round at the start of your turn, if the bonded creature is wounded for 5 or more hit points below its maximum hit points, it heals 5 hit points and you take 5 hit points of damage. You may have a number of bonds active at a time equal to your level."
     }
   ]
 }

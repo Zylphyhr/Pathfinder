@@ -56,6 +56,12 @@ function toggleStuff( char, effect, activated ) {
     case "Bloodrage" : {
       char.constitution += 4 * ( activated ? 1 : -1 );
       char.strength += 4 * ( activated ? 1 : -1 );
+      break;
+    }
+    case "Fatigue" : {
+      char.strength -= 2 * ( activated ? 1 : -1 );
+      char.dexterity -= 2 * ( activated ? 1 : -1 );
+      break;
     }
   }
 }

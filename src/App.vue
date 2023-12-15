@@ -2,8 +2,10 @@
 import { ref, onMounted } from 'vue';
 import axios from 'axios';
 import { usePathfinderStore } from "@/stores/pathfinderStore";
+import {storeToRefs} from "pinia";
 
 const store = usePathfinderStore();
+const { character } = storeToRefs( store );
 const continueFlag = ref(false);
 
 onMounted(() => {
@@ -29,7 +31,7 @@ onMounted(() => {
             <li class="nav-item rounded-top mx-1 border border-white">
               <router-link class="nav-link text-white" to="/combat">Combat</router-link>
             </li>
-            <li class="nav-item rounded-top mx-1 border border-white">
+            <li v-if="character && character.spells.length > 0" class="nav-item rounded-top mx-1 border border-white">
               <router-link class="nav-link text-white" to="/spells">Spells</router-link>
             </li>
             <li class="nav-item rounded-top mx-1 border border-white">

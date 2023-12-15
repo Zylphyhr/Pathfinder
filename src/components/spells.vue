@@ -1,10 +1,10 @@
 <script setup>
   import { usePathfinderStore } from '@/stores/pathfinderStore';
-  import {computed} from "vue";
+  import {storeToRefs} from "pinia";
   import {getDC, concentration} from "@/utils";
 
   const store = usePathfinderStore();
-  const character  = computed( () => store.character  );
+  const { character } = storeToRefs( store );
 </script>
 
 <template>

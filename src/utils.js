@@ -57,14 +57,6 @@ export function willSave(char) {
     bonus += hasProperty( char, "Bloodrage" ) ? 2 : 0;
     return (char.willGood ? calculateGoodSave(char.level) : calculatePoorSave(char.level)) + bonus;
 }
-export function getDamageBase( weapon, char ) {
-    let ret = weapon.baseDamage;
-    if( hasProperty( char, "Elemental Assault" ) ) ret += " +1d6(Fire)";
-    if( hasProperty( char, "Elemental Strike" ) ) ret += " +1d6(Fire)";
-    if( hasProperty( char, "Sneak Attack" ) ) ret += " +"+Math.floor( ( char.level +1 ) / 2 )+"d6(Precision)";
-
-    return ret;
-}
 export function skillBonuses(char) {
     return char.skills.map(skill => {
         let bonus = modifier(char[skill.stat]) + skill.bonus + skill.value;
@@ -132,7 +124,7 @@ export function calculateHitChance( weapon ) {
     if (weapon.flanking) hitChance += 2;
     if (weapon.energy) hitChance += 1;
     if( hasProperty( char, "Archaeologist’s Luck" ) ) hitChance += 1;
-    if( hasProperty( char, "Smite Evil" ) ) hitChance += char.charisma;
+    if( hasProperty( char, "Smite Evil" ) ) hitChance += modifier(char.charisma);
     return hitChance;
 }
 export function calculateDamageBonus( weapon ) {
@@ -145,6 +137,14 @@ export function calculateDamageBonus( weapon ) {
     if( hasProperty( char, "Archaeologist’s Luck" ) ) damage += 1;
     if( hasProperty( char, "Smite Evil" ) ) damage += char.level;
     return damage > 0 ? "+" + damage : damage < 0 ? damage : "";
+}
+export function getDamageBase( weapon, char ) {
+    let ret = weapon.baseDamage;
+    if( hasProperty( char, "Bloodrage" ) && weapon.name === "Claws" ) ret = "(x2 Attack Rolls) - 1d6";
+    if( hasProperty( char, "Elemental Assault" ) ) ret += " +1d6(Fire)";
+    if( hasProperty( char, "Elemental Strike" ) ) ret += " +1d6(Fire)";
+    if( hasProperty( char, "Sneak Attack" ) ) ret += " +"+Math.floor( ( char.level +1 ) / 2 )+"d6(Precision)";
+    return ret;
 }
 export function cmb(char) {
     return calculatedBAB(char) + Math.max(modifier(char.strength), modifier(char.dexterity));

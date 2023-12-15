@@ -1,6 +1,7 @@
 <script setup>
 import { usePathfinderStore } from "@/stores/pathfinderStore";
 import {computed} from "vue";
+import { storeToRefs } from "pinia";
 import { initiative, cmb, cmd, getDamageBase,
   calculateHitChance, calculateDamageBonus, calculateCrit,
   standardAC, touchAC, flatFootedAC,
@@ -8,10 +9,8 @@ import { initiative, cmb, cmd, getDamageBase,
 
 const store = usePathfinderStore();
 const { incrementHPs, decrementHPs } = store;
+const { character, currentHPs, maxHPs } = storeToRefs( store );
 
-const character  = computed( () => store.character  );
-const currentHPs = computed( () => store.currentHPs );
-const maxHPs     = computed( () => store.maxHPs     );
 const hpColor    = computed( () => {
   const colorRanges = ['darkred', 'darkorange', 'darkgoldenrod', 'darkgreen', 'darkblue', 'darkblue'];
   const index = Math.floor( ( currentHPs.value / maxHPs.value ) * (colorRanges.length - 1));

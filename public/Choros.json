@@ -1,28 +1,28 @@
 {
-  "characterName": "Corvo",
+  "characterName": "",
   "level": 2,
-  "strength": 13,
-  "constitution": 14,
-  "dexterity": 18,
-  "intelligence": 14,
+  "strength": 10,
+  "constitution": 10,
+  "dexterity": 16,
+  "intelligence": 16,
   "wisdom": 10,
-  "charisma": 12,
+  "charisma": 18,
   "fortGood": false,
   "refGood": true,
-  "willGood": false,
+  "willGood": true,
   "bab": 2,
   "hitDice": "d8",
-  "uncannyDodge": 0,
-  "initiativeBonus": 0,
+  "uncannyDodge": 1,
+  "initiativeBonus": 2,
   "size": 0,
   "speed": "30ft",
   "race": "Half-Elf",
-  "characterClass": "Rogue (Scout)",
+  "characterClass": "Bard (Archaeologist)",
   "imageURL": "/character.png",
   "skills": [
     {
       "name": "Acrobatics",
-      "value": 2,
+      "value": 0,
       "bonus": 0,
       "stat": "dexterity",
       "classSkill": false,
@@ -38,7 +38,7 @@
     },
     {
       "name": "Bluff",
-      "value": 0,
+      "value": 1,
       "bonus": 0,
       "stat": "charisma",
       "classSkill": false,
@@ -46,7 +46,7 @@
     },
     {
       "name": "Climb",
-      "value": 2,
+      "value": 0,
       "bonus": 0,
       "stat": "strength",
       "classSkill": false,
@@ -54,23 +54,23 @@
     },
     {
       "name": "Diplomacy",
-      "value": 0,
-      "bonus": 0,
+      "value": 1,
+      "bonus": 10,
       "stat": "charisma",
       "classSkill": false,
       "usable": true
     },
     {
       "name": "Disable Device",
-      "value": 2,
-      "bonus": 2,
+      "value": 1,
+      "bonus": 10,
       "stat": "dexterity",
       "classSkill": false,
       "usable": false
     },
     {
       "name": "Disguise",
-      "value": 0,
+      "value": 1,
       "bonus": 0,
       "stat": "charisma",
       "classSkill": false,
@@ -78,7 +78,7 @@
     },
     {
       "name": "Escape Artist",
-      "value": 2,
+      "value": 0,
       "bonus": 0,
       "stat": "dexterity",
       "classSkill": false,
@@ -118,7 +118,7 @@
     },
     {
       "name": "Knowledge (Arcana)",
-      "value": 0,
+      "value": 1,
       "bonus": 0,
       "stat": "intelligence",
       "classSkill": false,
@@ -126,7 +126,7 @@
     },
     {
       "name": "Knowledge (Dungeoneering)",
-      "value": 0,
+      "value": 1,
       "bonus": 0,
       "stat": "intelligence",
       "classSkill": false,
@@ -134,7 +134,7 @@
     },
     {
       "name": "Knowledge (Engineering)",
-      "value": 0,
+      "value": 1,
       "bonus": 0,
       "stat": "intelligence",
       "classSkill": false,
@@ -142,7 +142,7 @@
     },
     {
       "name": "Knowledge (Geography)",
-      "value": 0,
+      "value": 1,
       "bonus": 0,
       "stat": "intelligence",
       "classSkill": false,
@@ -150,7 +150,7 @@
     },
     {
       "name": "Knowledge (History)",
-      "value": 0,
+      "value": 1,
       "bonus": 0,
       "stat": "intelligence",
       "classSkill": false,
@@ -166,7 +166,7 @@
     },
     {
       "name": "Knowledge (Nature)",
-      "value": 0,
+      "value": 1,
       "bonus": 0,
       "stat": "intelligence",
       "classSkill": false,
@@ -174,7 +174,7 @@
     },
     {
       "name": "Knowledge (Nobility)",
-      "value": 0,
+      "value": 1,
       "bonus": 0,
       "stat": "intelligence",
       "classSkill": false,
@@ -182,7 +182,7 @@
     },
     {
       "name": "Knowledge (Planes)",
-      "value": 0,
+      "value": 1,
       "bonus": 0,
       "stat": "intelligence",
       "classSkill": false,
@@ -190,7 +190,7 @@
     },
     {
       "name": "Knowledge (Religion)",
-      "value": 0,
+      "value": 1,
       "bonus": 0,
       "stat": "intelligence",
       "classSkill": false,
@@ -198,7 +198,7 @@
     },
     {
       "name": "Linguistics",
-      "value": 0,
+      "value": 1,
       "bonus": 0,
       "stat": "intelligence",
       "classSkill": false,
@@ -206,8 +206,16 @@
     },
     {
       "name": "Perception",
-      "value": 2,
-      "bonus": 5,
+      "value": 1,
+      "bonus": 0,
+      "stat": "wisdom",
+      "classSkill": false,
+      "usable": true
+    },
+    {
+      "name": "Perform (Strings)",
+      "value": 1,
+      "bonus": 0,
       "stat": "wisdom",
       "classSkill": false,
       "usable": true
@@ -222,7 +230,7 @@
     },
     {
       "name": "Sense Motive",
-      "value": 2,
+      "value": 1,
       "bonus": 0,
       "stat": "wisdom",
       "classSkill": false,
@@ -230,7 +238,7 @@
     },
     {
       "name": "Sleight of Hand",
-      "value": 2,
+      "value": 0,
       "bonus": 0,
       "stat": "dexterity",
       "classSkill": false,
@@ -238,7 +246,7 @@
     },
     {
       "name": "Spellcraft",
-      "value": 0,
+      "value": 1,
       "bonus": 0,
       "stat": "intelligence",
       "classSkill": false,
@@ -246,7 +254,7 @@
     },
     {
       "name": "Stealth",
-      "value": 2,
+      "value": 1,
       "bonus": 0,
       "stat": "dexterity",
       "classSkill": false,
@@ -262,7 +270,7 @@
     },
     {
       "name": "Swim",
-      "value": 2,
+      "value": 0,
       "bonus": 0,
       "stat": "strength",
       "classSkill": false,
@@ -270,7 +278,7 @@
     },
     {
       "name": "Use Magic Device",
-      "value": 2,
+      "value": 1,
       "bonus": 0,
       "stat": "charisma",
       "classSkill": false,
@@ -293,12 +301,12 @@
     },
     {
       "id": "2",
-      "name": "Kukri",
-      "baseDamage": "1d4",
-      "criticalChance": 18,
+      "name": "Swordcane",
+      "baseDamage": "1d6",
+      "criticalChance": 20,
       "twoHanded": false,
       "weaponFocus": false,
-      "masterwork": true,
+      "masterwork": false,
       "powerAttack": false,
       "flanking": false,
       "charging": false,
@@ -306,7 +314,7 @@
     }
   ],
   "armour": {
-    "ac": 6
+    "ac": 0
   },
   "actions": [
     {
@@ -410,7 +418,7 @@
       "type": "Move"
     },
     {
-      "name": "-You have no Swift Actions-",
+      "name": "Lucky Bastard!",
       "type": "Swift"
     },
     {
@@ -442,15 +450,128 @@
       "type": "FullRound"
     }
   ],
-  "spells": [],
+  "spells": [
+    {
+      "name": "Dancing Lights",
+      "level": 0,
+      "school": "Evocation",
+      "castingTime": "1 standard action",
+      "area": null,
+      "components": "V, S",
+      "duration": "1 minute (D)",
+      "range": "Medium (100 ft. + 10 ft./level)",
+      "target": "",
+      "savingThrow": "None",
+      "spellResistance": "No",
+      "description": "Create up to four lights, all within a 10-ft.-radius area"
+    },
+    {
+      "name": "Detect Magic",
+      "level": 0,
+      "school": "Divination",
+      "castingTime": "1 standard action",
+      "area": "Cone-shaped emanation",
+      "components": "V, S",
+      "duration": "Concentration, up to 1 min./level (D)",
+      "range": "60 ft.",
+      "target": "",
+      "savingThrow": "None",
+      "spellResistance": "No",
+      "description": "You detect magical auras. The amount of information revealed depends on how long you study a particular area or subject."
+    },
+    {
+      "name": "Haunted Fey Aspect",
+      "level": 0,
+      "school": "Illusion",
+      "castingTime": "1 standard action",
+      "area": null,
+      "components": "S",
+      "duration": "1 round/level (D)",
+      "range": "Personal",
+      "target": "You",
+      "savingThrow": "None",
+      "spellResistance": "No",
+      "description": "You surround yourself with disturbing illusions, making you look and sound like a bizarre, insane fey creature. You gain DR /cold iron against a single opponent until the end of the spell, or until you take damage."
+    },
+    {
+      "name": "Prestidigitation",
+      "level": 0,
+      "school": "Universal",
+      "castingTime": "1 standard action",
+      "area": null,
+      "components": "V, S",
+      "duration": "1 hour",
+      "range": "10 ft.",
+      "target": "",
+      "savingThrow": "See text",
+      "spellResistance": "No",
+      "description": "Prestidigitations are minor tricks that novice spellcasters use for practice. Once cast, a prestidigitation spell enables you to perform simple magical effects for 1 hour. The effects are minor and have severe limitations"
+    },
+    {
+      "name": "Unwitting Ally",
+      "level": 0,
+      "school": "Enchantment",
+      "castingTime": "1 standard action",
+      "area": null,
+      "components": "V, S",
+      "duration": "1 round",
+      "range": "Close (25 ft. + 5 ft./2 levels)",
+      "targets": "One living creature",
+      "savingThrow": "Will negates",
+      "spellResistance": "Yes",
+      "description": "You befuddle the target’s mind. The target has difficulty telling friend from foe for a short period of time. The subject is considered your ally and not your enemies’ ally while determining flanking. The subject takes no other hostile action against your enemies due to this spell’s effect."
+    },
+    {
+      "name": "Auditory Hallucination",
+      "level": 1,
+      "school": "Illusion",
+      "castingTime": "1 standard action",
+      "area": null,
+      "components": "S",
+      "duration": "Concentration",
+      "range": "Long (400 ft. + 40 ft./level)",
+      "targets": "One creature/level, no two of which can be more than 30 ft. apart",
+      "savingThrow": "Will disbelief",
+      "spellResistance": "Yes",
+      "description": "You cause the targets to believe they hear any sound you imagine."
+    },
+    {
+      "name": "Silent Image",
+      "level": 1,
+      "school": "Illusion",
+      "castingTime": "1 standard action",
+      "area": null,
+      "components": "V, S, F (a bit of fleece)",
+      "duration": "Concentration",
+      "range": "Long (400 ft. + 40 ft./level)",
+      "target": "",
+      "savingThrow": "Will disbelief (if interacted with)",
+      "spellResistance": "No",
+      "description": "Visual figment that cannot extend beyond four 10-ft. cubes + one 10-ft. cube/level (S)"
+    },
+    {
+      "name": "Vanish",
+      "level": 1,
+      "school": "Illusion",
+      "castingTime": "1 standard action",
+      "area": null,
+      "components": "V, S",
+      "duration": "1 round/level (up to 5 rounds) (D)",
+      "range": "Touch",
+      "targets": "Creature touched",
+      "savingThrow": "Will negates (harmless)",
+      "spellResistance": "Yes (harmless)",
+      "description": "This spell functions like invisibility. Like invisibility, the spell immediately ends if the subject attacks any creature."
+    }
+  ],
   "trackedResources": [
     {
-      "name": "Sneak Attack",
-      "perDay": 0,
+      "name": "Archaeologist’s Luck",
+      "perDay": 8,
       "showCheckbox": true,
       "isActive": false,
       "usage": [],
-      "description": "Deal extra damage anytime your target is denied a Dexterity bonus to AC (such as if they do not see the attack coming), or when your target is flanked by you."
+      "description": "As a swift action, you gain +1 luck bonus to nearly every roll.  Use 4 + Charisma Modifier, rounds per day.  These rounds do not need to be consecutive, but if used consecutively, you do not need to spend a Swift Action to activate it on followup rounds."
     }
   ]
-}
+ }

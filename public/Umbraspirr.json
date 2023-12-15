@@ -1,31 +1,32 @@
 {
-  "characterName": "Corvo",
+  "characterName": "Umbraspirr",
   "level": 2,
-  "strength": 13,
-  "constitution": 14,
-  "dexterity": 18,
-  "intelligence": 14,
+  "strength": 16,
+  "constitution": 16,
+  "dexterity": 12,
+  "intelligence": 10,
   "wisdom": 10,
-  "charisma": 12,
-  "fortGood": false,
-  "refGood": true,
+  "charisma": 14,
+  "fortGood": true,
+  "refGood": false,
   "willGood": false,
-  "bab": 2,
-  "hitDice": "d8",
+  "bab": 3,
+  "currentHPs": 0,
+  "hitDice": "d10",
   "uncannyDodge": 0,
   "initiativeBonus": 0,
   "size": 0,
-  "speed": "30ft",
-  "race": "Half-Elf",
-  "characterClass": "Rogue (Scout)",
+  "speed": "40ft",
+  "race": "Wyvaran",
+  "characterClass": "Bloodrager (Primalist Spelleater)",
   "imageURL": "/character.png",
   "skills": [
     {
       "name": "Acrobatics",
-      "value": 2,
+      "value": 1,
       "bonus": 0,
       "stat": "dexterity",
-      "classSkill": false,
+      "classSkill": true,
       "usable": true
     },
     {
@@ -46,10 +47,10 @@
     },
     {
       "name": "Climb",
-      "value": 2,
+      "value": 1,
       "bonus": 0,
       "stat": "strength",
-      "classSkill": false,
+      "classSkill": true,
       "usable": true
     },
     {
@@ -62,8 +63,8 @@
     },
     {
       "name": "Disable Device",
-      "value": 2,
-      "bonus": 2,
+      "value": 0,
+      "bonus": 0,
       "stat": "dexterity",
       "classSkill": false,
       "usable": false
@@ -78,7 +79,7 @@
     },
     {
       "name": "Escape Artist",
-      "value": 2,
+      "value": 0,
       "bonus": 0,
       "stat": "dexterity",
       "classSkill": false,
@@ -86,7 +87,7 @@
     },
     {
       "name": "Fly",
-      "value": 0,
+      "value": 1,
       "bonus": 0,
       "stat": "dexterity",
       "classSkill": false,
@@ -97,7 +98,7 @@
       "value": 0,
       "bonus": 0,
       "stat": "charisma",
-      "classSkill": false,
+      "classSkill": true,
       "usable": false
     },
     {
@@ -110,10 +111,10 @@
     },
     {
       "name": "Intimidate",
-      "value": 0,
+      "value": 1,
       "bonus": 0,
       "stat": "charisma",
-      "classSkill": false,
+      "classSkill": true,
       "usable": true
     },
     {
@@ -121,7 +122,7 @@
       "value": 0,
       "bonus": 0,
       "stat": "intelligence",
-      "classSkill": false,
+      "classSkill": true,
       "usable": false
     },
     {
@@ -206,23 +207,23 @@
     },
     {
       "name": "Perception",
-      "value": 2,
-      "bonus": 5,
+      "value": 1,
+      "bonus": 0,
       "stat": "wisdom",
-      "classSkill": false,
+      "classSkill": true,
       "usable": true
     },
     {
       "name": "Ride",
-      "value": 0,
+      "value": 1,
       "bonus": 0,
       "stat": "dexterity",
-      "classSkill": false,
+      "classSkill": true,
       "usable": true
     },
     {
       "name": "Sense Motive",
-      "value": 2,
+      "value": 0,
       "bonus": 0,
       "stat": "wisdom",
       "classSkill": false,
@@ -230,7 +231,7 @@
     },
     {
       "name": "Sleight of Hand",
-      "value": 2,
+      "value": 0,
       "bonus": 0,
       "stat": "dexterity",
       "classSkill": false,
@@ -241,12 +242,12 @@
       "value": 0,
       "bonus": 0,
       "stat": "intelligence",
-      "classSkill": false,
+      "classSkill": true,
       "usable": false
     },
     {
       "name": "Stealth",
-      "value": 2,
+      "value": 0,
       "bonus": 0,
       "stat": "dexterity",
       "classSkill": false,
@@ -254,23 +255,23 @@
     },
     {
       "name": "Survival",
-      "value": 0,
+      "value": 1,
       "bonus": 0,
       "stat": "wisdom",
-      "classSkill": false,
+      "classSkill": true,
       "usable": true
     },
     {
       "name": "Swim",
-      "value": 2,
+      "value": 1,
       "bonus": 0,
       "stat": "strength",
-      "classSkill": false,
+      "classSkill": true,
       "usable": true
     },
     {
       "name": "Use Magic Device",
-      "value": 2,
+      "value": 0,
       "bonus": 0,
       "stat": "charisma",
       "classSkill": false,
@@ -280,8 +281,8 @@
   "weapons": [
     {
       "id": "1",
-      "name": "Unarmed",
-      "baseDamage": "1d3",
+      "name": "Claws",
+      "baseDamage": "1d4",
       "criticalChance": 20,
       "twoHanded": false,
       "weaponFocus": false,
@@ -293,12 +294,12 @@
     },
     {
       "id": "2",
-      "name": "Kukri",
-      "baseDamage": "1d4",
-      "criticalChance": 18,
+      "name": "Tail",
+      "baseDamage": "1d6",
+      "criticalChance": 20,
       "twoHanded": false,
       "weaponFocus": false,
-      "masterwork": true,
+      "masterwork": false,
       "powerAttack": false,
       "flanking": false,
       "charging": false,
@@ -445,12 +446,20 @@
   "spells": [],
   "trackedResources": [
     {
-      "name": "Sneak Attack",
+      "name": "Bloodrage",
+      "perDay": 7,
+      "showCheckbox": true,
+      "isActive": false,
+      "usage": [],
+      "description": "Freely enter a Bloodrage at any time, but limited to a number of rounds equal to 4 + Constitution modifier +2x per level.  When leaving a Bloodrage, you are Fatigued (see below) for double the number of rounds you were Bloodraging.  During your Bloodrage, you get 2 claw attacks that do 1d6 damage instead of 1d3."
+    },
+    {
+      "name": "Fatigue",
       "perDay": 0,
       "showCheckbox": true,
       "isActive": false,
       "usage": [],
-      "description": "Deal extra damage anytime your target is denied a Dexterity bonus to AC (such as if they do not see the attack coming), or when your target is flanked by you."
+      "description": "A fatigued character can neither run nor charge and takes a –2 penalty to Strength and Dexterity. "
     }
   ]
 }

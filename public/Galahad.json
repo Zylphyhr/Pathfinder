@@ -1,0 +1,329 @@
+{
+  "characterName": "Galahad",
+  "level": 2,
+  "strength": 16,
+  "constitution": 14,
+  "dexterity": 14,
+  "intelligence": 12,
+  "wisdom": 10,
+  "charisma": 16,
+  "fortGood": true,
+  "refGood": false,
+  "willGood": true,
+  "bab": 2,
+  "hitDice": "d8",
+  "initiativeBonus": 0,
+  "uncannyDodge": 0,
+  "size": 0,
+  "speed": "30ft",
+  "race": "Suli",
+  "characterClass": "Magus (Eldritch Scion/BladeBound)",
+  "imageURL": "/character.png",
+  "skills": [
+    { "name": "Acrobatics", "value": 0, "bonus": 0, "stat": "dexterity", "classSkill": false, "usable": true },
+    { "name": "Appraise", "value": 0, "bonus": 0, "stat": "intelligence", "classSkill": false, "usable": true },
+    { "name": "Bluff", "value": 0, "bonus": 0, "stat": "charisma", "classSkill": false, "usable": true },
+    { "name": "Climb", "value": 1, "bonus": 0, "stat": "strength", "classSkill": true, "usable": true },
+    { "name": "Diplomacy", "value": 0, "bonus": 2, "stat": "charisma", "classSkill": false, "usable": true },
+    { "name": "Disable Device", "value": 0, "bonus": 0, "stat": "dexterity", "classSkill": false, "usable": false },
+    { "name": "Disguise", "value": 0, "bonus": 0, "stat": "charisma", "classSkill": false, "usable": true },
+    { "name": "Escape Artist", "value": 0, "bonus": 0, "stat": "dexterity", "classSkill": false, "usable": true },
+    { "name": "Fly", "value": 0, "bonus": 0, "stat": "dexterity", "classSkill": true, "usable": true },
+    { "name": "Handle Animal", "value": 0, "bonus": 0, "stat": "charisma", "classSkill": true, "usable": false },
+    { "name": "Heal", "value": 0, "bonus": 0, "stat": "wisdom", "classSkill": false, "usable": true },
+    { "name": "Intimidate", "value": 0, "bonus": 0, "stat": "charisma", "classSkill": true, "usable": true },
+    { "name": "Knowledge (Arcana)", "value": 0, "bonus": 0, "stat": "intelligence", "classSkill": true, "usable": false },
+    { "name": "Knowledge (Dungeoneering)", "value": 1, "bonus": 0, "stat": "intelligence", "classSkill": true, "usable": false },
+    { "name": "Knowledge (Engineering)", "value": 0, "bonus": 0, "stat": "intelligence", "classSkill": false, "usable": false },
+    { "name": "Knowledge (Geography)", "value": 0, "bonus": 0, "stat": "intelligence", "classSkill": false, "usable": false },
+    { "name": "Knowledge (History)", "value": 0, "bonus": 0, "stat": "intelligence", "classSkill": false, "usable": false },
+    { "name": "Knowledge (Local)", "value": 0, "bonus": 0, "stat": "intelligence", "classSkill": false, "usable": false },
+    { "name": "Knowledge (Nature)", "value": 0, "bonus": 0, "stat": "intelligence", "classSkill": false, "usable": false },
+    { "name": "Knowledge (Nobility)", "value": 0, "bonus": 0, "stat": "intelligence", "classSkill": false, "usable": false },
+    { "name": "Knowledge (Planes)", "value": 0, "bonus": 0, "stat": "intelligence", "classSkill": true, "usable": false },
+    { "name": "Knowledge (Religion)", "value": 0, "bonus": 0, "stat": "intelligence", "classSkill": false, "usable": false },
+    { "name": "Linguistics", "value": 0, "bonus": 0, "stat": "intelligence", "classSkill": false, "usable": false },
+    { "name": "Perception", "value": 0, "bonus": 0, "stat": "wisdom", "classSkill": false, "usable": true },
+    { "name": "Ride", "value": 2, "bonus": 0, "stat": "dexterity", "classSkill": true, "usable": true },
+    { "name": "Sense Motive", "value": 0, "bonus": 0, "stat": "wisdom", "classSkill": false, "usable": true },
+    { "name": "Sleight of Hand", "value": 0, "bonus": 0, "stat": "dexterity", "classSkill": false, "usable": false },
+    { "name": "Spellcraft", "value": 0, "bonus": 0, "stat": "intelligence", "classSkill": true, "usable": false },
+    { "name": "Stealth", "value": 0, "bonus": 0, "stat": "dexterity", "classSkill": false, "usable": true },
+    { "name": "Survival", "value": 0, "bonus": 0, "stat": "wisdom", "classSkill": false, "usable": true },
+    { "name": "Swim", "value": 1, "bonus": 0, "stat": "strength", "classSkill": true, "usable": true },
+    { "name": "Use Magic Device", "value": 1, "bonus": 0, "stat": "charisma", "classSkill": true, "usable": false }
+  ],
+  "weapons": [
+    { "id": "1", "name": "Unarmed", "baseDamage": "1d3", "criticalChance": 20, "twoHanded": false, "weaponFocus": false, "masterwork": false, "powerAttack": false, "flanking": false, "charging": false, "energy": false },
+    { "id": "2", "name": "Nodachi", "baseDamage": "1d10", "criticalChance": 18, "twoHanded": true, "weaponFocus": false, "masterwork": true, "powerAttack": false, "flanking": false, "charging": false, "energy": false }
+  ],
+  "armour": {
+    "ac": 6
+  },
+  "actions": [
+    {
+      "name": "Attack",
+      "type": "Standard"
+    },
+    {
+      "name": "Cast Spell",
+      "type": "Standard"
+    },
+    {
+      "name": "Activate Magic Item",
+      "type": "Standard"
+    },
+    {
+      "name": "Channel Energy",
+      "type": "Standard"
+    },
+    {
+      "name": "Maintain Spell",
+      "type": "Standard"
+    },
+    {
+      "name": "Dismiss Spell",
+      "type": "Standard"
+    },
+    {
+      "name": "Drink Potion/Use Oil",
+      "type": "Standard"
+    },
+    {
+      "name": "Escape (vs Grapple)",
+      "type": "Standard"
+    },
+    {
+      "name": "Feint",
+      "type": "Standard"
+    },
+    {
+      "name": "Read Scroll",
+      "type": "Standard"
+    },
+    {
+      "name": "Total Defense",
+      "type": "Standard"
+    },
+    {
+      "name": "Use Ability (Default)",
+      "type": "Standard"
+    },
+    {
+      "name": "Move (Speed x2)",
+      "type": "Standard"
+    },
+    {
+      "name": "- Hold Action -",
+      "type": "Standard"
+    },
+    {
+      "name": "Move (Speed)",
+      "type": "Move"
+    },
+    {
+      "name": "Control Mount",
+      "type": "Move"
+    },
+    {
+      "name": "Direct/Redirect Spell",
+      "type": "Move"
+    },
+    {
+      "name": "Draw Weapon from Sheath/Bag",
+      "type": "Move"
+    },
+    {
+      "name": "Load Crossbow",
+      "type": "Move"
+    },
+    {
+      "name": "Open Door",
+      "type": "Move"
+    },
+    {
+      "name": "Mount/Dismount Steed",
+      "type": "Move"
+    },
+    {
+      "name": "Sheathe Weapon",
+      "type": "Move"
+    },
+    {
+      "name": "Stand Up",
+      "type": "Move"
+    },
+    {
+      "name": "Ready/Drop Shield",
+      "type": "Move"
+    },
+    {
+      "name": "Get item from Bag/Container",
+      "type": "Move"
+    },
+    {
+      "name": "-You have no Swift Actions-",
+      "type": "Swift"
+    },
+    {
+      "name": "Full Attack",
+      "type": "FullRound"
+    },
+    {
+      "name": "Charge",
+      "type": "FullRound"
+    },
+    {
+      "name": "Extinguish/Light a Fire/Torch",
+      "type": "FullRound"
+    },
+    {
+      "name": "Load Heavy Crossbow",
+      "type": "FullRound"
+    },
+    {
+      "name": "Throw Splash Weapon",
+      "type": "FullRound"
+    },
+    {
+      "name": "Run (Speed x4)",
+      "type": "FullRound"
+    },
+    {
+      "name": "Withdraw",
+      "type": "FullRound"
+    }
+  ],
+  "spells": [
+    {
+      "name": "Detect Magic",
+      "level": 0,
+      "school": "Divination",
+      "castingTime": "1 standard action",
+      "area": "Cone-shaped emanation",
+      "components": "V, S",
+      "duration": "Concentration, up to 1 min./level (D)",
+      "range": "60 ft.",
+      "targets": null,
+      "savingThrow": "None",
+      "spellResistance": "No",
+      "description": "You detect magical auras. The amount of information revealed depends on how long you study a particular area or subject."
+    },
+    {
+      "name": "Detect Fiendish Presence",
+      "level": 0,
+      "school": "Divination",
+      "castingTime": "1 standard action",
+      "area": "Cone-shaped emanation",
+      "components": "V, S",
+      "duration": "Concentration, up to 10 minutes/level (D)",
+      "range": "60 ft.",
+      "targets": "Cone-shaped emanation",
+      "savingThrow": "None",
+      "spellResistance": "No",
+      "description": "This spell functions like detect evil, except that it detects only outsiders with the evil subtype, as well as the lingering effects caused by their gifts, presence, and spells."
+    },
+    {
+      "name": "Disrupt Undead",
+      "level": 0,
+      "school": "Necromancy",
+      "castingTime": "1 standard action",
+      "area": "Single Target",
+      "components": "V, S",
+      "duration": "Instantaneous",
+      "range": "Close (25 ft. + 5 ft./2 levels)",
+      "targets": "Ray",
+      "savingThrow": "None",
+      "spellResistance": "Yes",
+      "description": "You must make a ranged touch attack to hit, and if the ray hits an undead creature, it deals 1d6 points of damage to it."
+    },
+    {
+      "name": "Light",
+      "level": 0,
+      "school": "Evocation",
+      "castingTime": "1 standard action",
+      "area": null,
+      "components": "V",
+      "duration": "10 min./level",
+      "range": "Touch",
+      "targets": "Object touched",
+      "savingThrow": "None",
+      "spellResistance": "No",
+      "description": "This spell causes a touched object to glow like a torch, shedding normal light in a 20-foot radius from the point touched, and increasing the light level for an additional 20 feet by one step, up to normal light (darkness becomes dim light, and dim light becomes normal light)."
+    },
+    {
+      "name": "Mage Hand",
+      "level": 0,
+      "school": "Transmutation",
+      "castingTime": "1 standard action",
+      "area": null,
+      "components": "V, S",
+      "duration": "Concentration",
+      "range": "Close (25 ft. + 5 ft./2 levels)",
+      "targets": "One non-magical, unattended object weighing up to 5 lbs.",
+      "savingThrow": "None",
+      "spellResistance": "No",
+      "description": "You point your finger at an object and can lift it and move it at will from a distance. As a move action, you can propel the object as far as 15 feet in any direction, though the spell ends if the distance between you and the object ever exceeds the spell’s range."
+    },
+    {
+      "name": "Feather Fall",
+      "level": 1,
+      "school": "Transmutation",
+      "castingTime": "1 immediate action",
+      "area": null,
+      "components": "V",
+      "duration": "Until landing or 1 round/level",
+      "range": "Close (25 ft. + 5 ft./2 levels)",
+      "targets": "One Medium or smaller free-falling object or creature/level, no two of which may be more than 20 ft. apart",
+      "savingThrow": "Will negates (harmless) or Will negates (object)",
+      "spellResistance": "Yes (object)",
+      "description": "The affected creatures or objects fall slowly."
+    },
+    {
+      "name": "Grease",
+      "level": 1,
+      "school": "Conjuration",
+      "castingTime": "1 standard action",
+      "area": null,
+      "components": "V, S",
+      "duration": "1 min./level (D)",
+      "range": "Close (25 ft. + 5 ft./2 levels)",
+      "target": "One object or 10-ft. square",
+      "savingThrow": "See text",
+      "spellResistance": "No",
+      "description": " Any creature in the area when the spell is cast must make a successful Reflex save or fall. A creature can walk within or through the area of grease at half normal speed with a DC 10 Acrobatics check. Failure means it can’t move that round (and must then make a Reflex save or fall), while failure by 5 or more means it falls (see the Acrobatics skill for details)."
+    },
+    {
+      "name": "Infernal Healing",
+      "level": 1,
+      "school": "Conjuration",
+      "castingTime": "1 round",
+      "area": null,
+      "components": "V, S",
+      "duration": "1 minute",
+      "range": "Touch",
+      "target": "Creature touched",
+      "savingThrow": "Will negates (harmless)",
+      "spellResistance": "Yes (harmless)",
+      "description": "Target gains fast healing 1"
+    }
+  ],
+  "trackedResources": [
+    {
+      "name": "Elemental Assault",
+      "perDay": 1,
+      "showCheckbox": true,
+      "isActive": false,
+      "usage": [],
+      "description": "Once per day, as a Swift Action, add +1d6 fire damage to your attacks that last a number of rounds equal to your level, as your arms and weapons are enshrouded in fire."
+    },
+    {
+      "name": "Elemental Strikes",
+      "perDay": 3,
+      "showCheckbox": true,
+      "isActive": false,
+      "usage": [],
+      "description": "3x per day, as a Swift Action, you imbue your weapons with +1d6 Fire damage, for the rest of the round. At 8th level, you can do this 5x per day.  At 20th, the effect becomes permanent."
+    }
+  ]
+}
