@@ -20,7 +20,7 @@ export const usePathfinderStore = defineStore( 'pathfinderStore', {
             }
         },
         decrementHPs() {
-            if( this.currentHPs > 0          ) {
+            if( this.currentHPs > 0 ) {
                 this.currentHPs--;
                 localStorage.setItem('currentHPs', this.currentHPs);
             }

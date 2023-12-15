@@ -42,6 +42,13 @@ onMounted(() => {
 function updateUsage(resource) {
   localStorage.setItem(`resource-usage-${resource.name}`, JSON.stringify(resource.usage));
 }
+function resetAllResources() {
+  character.value.trackedResources.forEach(resource => {
+    resource.usage = new Array(resource.perDay).fill(false);
+    localStorage.setItem(`resource-usage-${resource.name}`, JSON.stringify(resource.usage));
+  });
+}
+
 </script>
 
 <template>
@@ -97,6 +104,9 @@ function updateUsage(resource) {
           <p class="mt-2" v-if="resource.showDescription">{{ resource.description }}</p>
         </div>
       </div>
+
+      <button class="btn" @click="resetAllResources">Reset All Resources</button>
+
 
     </div>
 </template>
