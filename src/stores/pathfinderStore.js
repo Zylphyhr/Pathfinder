@@ -28,8 +28,9 @@ export const usePathfinderStore = defineStore( 'pathfinderStore', {
         setCharacter(data) {
             this.character = data;
             const storedCurrentHPs = parseInt(localStorage.getItem('currentHPs'), 10);
+            const maxHPs = getMaxHPs(data);
 
-            this.currentHPs = ! isNaN(storedCurrentHPs) ? storedCurrentHPs : getMaxHPs(data);
+            this.currentHPs = ! isNaN(storedCurrentHPs) && storedCurrentHPs < maxHPs ? storedCurrentHPs : maxHPs;
             this.maxHPs = getMaxHPs(data);
         }
     },
