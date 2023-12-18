@@ -15,9 +15,6 @@ export function acPenalty( char ) {
 export function modifier(attribute) {
     return Math.floor((attribute - 10) / 2);
 }
-export function calculateCrit( weapon ) {
-    return weapon.criticalChance === 20 ? "20" : weapon.criticalChance + "-20";
-}
 export function standardAC(char) {
     return 10 + char.armour.ac + modifier(char.dexterity) - acPenalty(char);
 }
@@ -111,8 +108,10 @@ export function getMaxHPs(char) {
 export function calculatedBAB( char ) {
     return Math.floor( char.level * (char.bab+1) * 0.25 );
 }
-export function calculateHitChance( weapon ) {
-    const char = this.character;
+export function calculateCrit( weapon ) {
+    return weapon.criticalChance === 20 ? "20" : weapon.criticalChance + "-20";
+}
+export function calculateHitChance( weapon, char ) {
     let hitChance = Math.max(modifier(char.strength), modifier(char.dexterity));
     hitChance += calculatedBAB(char);
     if (weapon.powerAttack) {
@@ -127,8 +126,7 @@ export function calculateHitChance( weapon ) {
     if( hasProperty( char, "Smite Evil" ) ) hitChance += modifier(char.charisma);
     return hitChance;
 }
-export function calculateDamageBonus( weapon ) {
-    const char = this.character;
+export function calculateDamageBonus( weapon, char ) {
     let damage = modifier(char.strength);
     if (weapon.powerAttack) {
         damage += 2 * (Math.floor(calculatedBAB(char) / 4) + 1);

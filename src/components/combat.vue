@@ -109,7 +109,7 @@ const hpColor    = computed( () => {
           <div class="card-body text-white bg-dark">
             <div class="d-flex justify-content-between m-1">
               <div class="flex-grow-1 px-2 text-end rounded-start bordered slate">Chance to Hit:</div>
-              <div class="flex-shrink-1 px-2 min-width-33 text-center rounded-end bordered dark">{{ calculateHitChance(weapon) }}</div>
+              <div class="flex-shrink-1 px-2 min-width-33 text-center rounded-end bordered dark">{{ calculateHitChance(weapon, character) }}</div>
             </div>
             <div class="d-flex justify-content-between m-1">
               <div class="flex-grow-1 px-2 text-end rounded-start bordered slate">Critical Chance:</div>
@@ -117,7 +117,7 @@ const hpColor    = computed( () => {
             </div>
             <div class="d-flex justify-content-between m-1">
               <div class="flex-grow-1 px-2 text-end rounded-start bordered slate">Damage:</div>
-              <div class="flex-shrink-1 px-2 min-width-33 text-center rounded-end bordered dark">{{ getDamageBase(weapon, character) }}{{ calculateDamageBonus(weapon) }}</div>
+              <div class="flex-shrink-1 px-2 min-width-33 text-center rounded-end bordered dark">{{ getDamageBase(weapon, character) }}{{ calculateDamageBonus(weapon, character) }}</div>
             </div>
             <hr>
             <div class="form-check">
