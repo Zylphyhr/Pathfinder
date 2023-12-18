@@ -36,19 +36,24 @@ const router = createRouter({
       path: '/actions',
       name: 'actions',
       component: Actions
+    },
+    {
+      path: '/:catchAll(.*)',
+      name:'home',
+      component: Home
     }
   ]
 })
 
-/* Another ChatGPT bit for me to learn */
-// If they refresh and are not on the Home page
 router.beforeEach(async (to, from, next) => {
   const store = usePathfinderStore();
   const curChar = localStorage.getItem('characterData');
 
-  if( to.name === "home" ) { // Can always go home.
-    next();
-  } else if( to.name !== 'home' && ! store.character && curChar ) {
+  if( to.name === "home" || store.character ) { // Can always go home.
+    next();                                     // and Characters can go anywhere.
+  } else if( ! curChar ) {                      // Otherwise, see if character is
+    next({ name: 'home' });                     // loading, if not... go Home!
+  } else {                                      // Wait til character loads, and Boom!
     try {
       await store.loadCharacter( curChar );
       next();
@@ -58,12 +63,7 @@ router.beforeEach(async (to, from, next) => {
       next({ name: 'home' });
       localStorage.removeItem('characterData');
     }
-  } else if( store.character ) {
-    next();
-  } else {
-    next({ name: 'home' });
   }
 });
-
 
 export default router

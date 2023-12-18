@@ -11,9 +11,11 @@ const router = useRouter();
 const loadChar = async(short) => {
   try {
     await store.loadCharacter(short);
-    await router.push({ name: 'stats' }).catch(err => {
-      console.error("Error during navigation: ", err);
-    });
+    try {
+      await router.push({name: 'stats'})
+    } catch(err) {
+        console.error("Error during navigation: ", err);
+    }
   } catch(err) {
     console.error("Error during character load: ", err);
   }
