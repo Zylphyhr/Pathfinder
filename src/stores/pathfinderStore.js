@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia';
 import { getMaxHPs } from "@/utils";
+import axios from 'axios';
 
 export const usePathfinderStore = defineStore( 'pathfinderStore', {
     state: () => {
@@ -16,13 +17,13 @@ export const usePathfinderStore = defineStore( 'pathfinderStore', {
         incrementHPs() {
             if( this.currentHPs < this.maxHPs) {
                 this.currentHPs++;
-                localStorage.setItem('currentHPs', this.currentHPs);
+                localStorage.setItem('currentHPs', this.currentHPs.toString());
             }
         },
         decrementHPs() {
             if( this.currentHPs > 0 ) {
                 this.currentHPs--;
-                localStorage.setItem('currentHPs', this.currentHPs);
+                localStorage.setItem('currentHPs', this.currentHPs.toString());
             }
         },
         setCharacter(data) {
@@ -32,7 +33,21 @@ export const usePathfinderStore = defineStore( 'pathfinderStore', {
 
             this.currentHPs = ! isNaN(storedCurrentHPs) && storedCurrentHPs < maxHPs ? storedCurrentHPs : maxHPs;
             this.maxHPs = getMaxHPs(data);
-        }
+            localStorage.removeItem('characterData');
+        },
+        loadCharacter(characterName) {
+            const name = characterName || localStorage.getItem('characterData')
+
+            localStorage.setItem('characterData', name );
+            axios.get(`${name}.json`)
+                .then(response => {
+                    this.setCharacter(response.data)
+                })
+                .catch(error => {
+                    console.error("Error fetching character data: ", error);
+                    localStorage.removeItem('characterData');
+                });
+            }
     },
 });
 

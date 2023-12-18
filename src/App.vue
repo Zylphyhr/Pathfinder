@@ -1,21 +1,9 @@
 <script setup>
-import { ref, onMounted } from 'vue';
-import axios from 'axios';
 import { usePathfinderStore } from "@/stores/pathfinderStore";
 import {storeToRefs} from "pinia";
 
 const store = usePathfinderStore();
 const { character } = storeToRefs( store );
-const continueFlag = ref(false);
-
-onMounted(() => {
-  axios.get('/character.json')
-      .then(response => {
-        store.setCharacter( response.data );
-        continueFlag.value = true;
-      })
-      .catch(error => console.error('Error fetching the JSON file:', error));
-});
 </script>
 
 <template>
@@ -43,11 +31,7 @@ onMounted(() => {
     </div>
   </header>
   <main>
-    <div v-if="continueFlag" class="tab-content" id="characterSheetTabsContent">
       <router-view></router-view>
-    </div><div v-else class="d-flex justify-content-center align-items-center h2" style="height: 100vh;">
-      Loading Character Data...
-    </div>
   </main>
 </template>
 

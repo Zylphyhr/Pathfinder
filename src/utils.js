@@ -1,4 +1,33 @@
-// Note to Add: if (character.trackedResources.some(resource => resource.name.includes("Rage") && resource.isActive)) {
+const characters = [
+    {
+        name: "choros",
+        short: "Choros",
+        info: "Bard (Archaeologist)"
+    },
+    {
+        name: "corvo",
+        short: "Corvo",
+        info: "Rogue (Scout)"
+    },
+    {
+        name: "galahad",
+        short: "Galahad",
+        info: "Magus (Eldritch Scion, Bladebound)"
+    },
+    {
+        name: "radagon",
+        short: "Radagon",
+        info: "Paladin (Samurai of the Honorbound Light)"
+    },
+    {
+        name: "umbraspirr",
+        short: "Umbraspirr",
+        info: "Bloodrager (Draconic Primalist Spelleater)"
+    }
+];
+
+export function getCharacters() { return characters; }
+
 export function hasProperty( char, name ) {
     return char.trackedResources.some(resource => resource.name.includes( name ) && resource.isActive)
 }

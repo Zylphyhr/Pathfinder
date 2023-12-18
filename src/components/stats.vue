@@ -21,7 +21,7 @@ const imageError = ref(false);
       <!-- First Column - Character Info -->
       <div class="col-lg-4 col-md-6 col-12">
         <template v-if="!imageError">
-          <img :src="character.imageURL" class="img-fluid rounded" alt="Character Portrait" @error="handleImageError">
+          <img :src="`/${character.characterName}.png`" class="img-fluid rounded" alt="Character Portrait" @error="handleImageError">
         </template>
         <template v-else>
           <i class="bi bi-person-bounding-box m-4" style="font-size: 16em;"></i>
